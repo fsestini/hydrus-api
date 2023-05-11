@@ -1,0 +1,57 @@
+cabal-version:      2.4
+name:               hydrus-api
+version:            0.1.0.0
+synopsis:
+    Library of utility functions to invoke the Hydrus Client API
+
+-- A longer description of the package.
+-- description:
+homepage:           https://github.com/fsestini/hydrus-api
+
+-- A URL where users can report bugs.
+-- bug-reports:
+license:            MIT
+license-file:       LICENSE
+author:             Filippo Sestini
+maintainer:         sestini.filippo@gmail.com
+
+-- A copyright notice.
+-- copyright:
+category:           Network
+extra-source-files: CHANGELOG.md
+
+library
+    exposed-modules:  Hydrus.API
+                    , Hydrus.API.Utils
+                    , Hydrus.API.Types
+                    , Hydrus.API.Internal
+
+    -- Modules included in this library but not exported.
+    -- other-modules:
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base
+                    , servant
+                    , servant-client
+                    , servant-client-core
+                    , free
+                    , http-client
+                    , aeson
+                    , text
+                    , bytestring
+                    , http-api-data >= 0.5.1
+                    , http-media
+                    , mtl
+                    , containers
+                    , filepath
+                    , constraints
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+test-suite hydrus-api-test
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MyLibTest.hs
+    build-depends:    base
